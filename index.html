@@ -142,6 +142,10 @@ y_c &= {\cal N}(50\,\mbox{km},(30\,\mbox{km})^2)
 # Step 1: free model run
 
 * __Objective: make a (single) model run without assimilation and with a fixed initial condition.__
+* Open a terminal and go to the folder `/home/gher/shallow-water-model`
+```bash
+cd /home/gher/shallow-water-model
+```
 * Start with the code `shallow_water2d_main.F90` which is the main program. Have a look at:
  * the variable declaration
  * the model time loop
@@ -194,7 +198,7 @@ variables:
 # Visualize the results 
 
 * We will visualize the results of the free model run in Octave
-* Start Octave
+* Open a new terminal and start Octave
 ```bash
 octave
 ```
@@ -398,8 +402,9 @@ title('Probability that the sea-surface elevation exceeds 3 m')
 ---
 # Compilation of OAK
 
-* Edit `config.mk`
-* Adapt:
+* Go to `/home/gher/OAK`
+* Open `config.mk`
+* Have a look at:
   * `OS`: operating system (e.g. <em>Linux</em>, AIX, ...)
   * `FORT`: Fortran compiler (e.g. <em>gfortran</em>, ifort, pgi, ...)
   * library location (NetCDF, LAPACK, BLAS). For NetCDF:
@@ -462,7 +467,7 @@ call oak_assim_ens(config,time,zeta,U,V)
 ---
 # Configuration file of OAK
 
-* See template `assim.init.template`
+* See template `shallow_water2d.init`
 * Each line: `name = value`
 * If value is a string (such as file name), it must be in single quotes:
 * Example:
@@ -499,7 +504,7 @@ Model.variables = [                  'zeta',         'temp']
 Model.gridX     = ['domain.nc#lon(:,:,end)','domain.nc#lon']  
 Model.gridY     = ['domain.nc#lat(:,:,end)','domain.nc#lat']  
 Model.gridZ     = [  'domain.nc#z(:,:,end)',  'domain.nc#z']  
-Model.mask      = [  'domain.nc#z(:,:,end)',  'domain.nc#z']  
+Model.mask      = [  'domain.nc#m(:,:,end)',  'domain.nc#m']  
 Model.path      = '/home/user/Data/' 
 </pre>
 </div>
