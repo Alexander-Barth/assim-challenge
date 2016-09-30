@@ -136,6 +136,17 @@ y_c &= {\cal N}(50\,\mbox{km},(30\,\mbox{km})^2)
 * a text editor  (`gedit` et `emacs` are installed)
 * Maybe you will also use the file manager
 
+---
+# Change keyboard layout
+
+<div>
+<img src="Fig/keyboard1.png" width="350">
+<img src="Fig/keyboard3.png" width="350">
+</div>
+* You can change the keyboard layout
+* English (US), Italian, Frensh and German layout are already setup on a short list
+* More layout can be added (Text Entry Settings ... -> plus sign -> choose from the list)
+
 
 ---
 
@@ -579,8 +590,9 @@ You can only use 5 observations.
 ```
 
 * The complete configuration file is the file `shallow_water2d.init`
-* Compile and run the model with assimilation.
-* Compare the ensemble mean to the true solution by running the program `compare` with the NetCDF file as argument, e.g.:
+* __Compile__ and __run__ the model with assimilation.
+* __This will take some time__ (after the last observation is assimilated, the model continues with a forecast)
+* __Compare__ the ensemble mean to the true solution by running the program `compare` with the NetCDF file as argument, e.g.:
 
 ```bash
 ./compare assim_ensemble.nc
