@@ -262,6 +262,31 @@ xc = 20e3 + 10e3 * randn()
 
 * Change the file name (variable `fname`) in order to not overwrite your results (in this steps and in the following steps).
 
+
+---
+# When you are lost...
+
+* The adapted code is in the directory `steps`
+* If necessary, you can also use these files where the change from step 2, 3 and 4 have already been made
+* For example, to copy the code from step 2, you would use:
+
+```bash
+cp steps/shallow_water2d_main_step2.F90 shallow_water2d_main.F90
+```
+
+* Do not forget to recompile with `make`.
+
+```bash
+make
+```
+
+* Note that `make` expects the source code to be called always `shallow_water2d_main.F90` (i.e. with `step2`, `step3` or `step4` in the file name)
+* Then rerun the program.
+
+```bash
+./shallow_water2d_main
+```
+
 ---
 # Step 3: Ensemble run
 
