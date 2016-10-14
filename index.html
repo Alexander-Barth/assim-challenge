@@ -251,6 +251,18 @@ help ncread
 </video> 
 </div>
 
+
+---
+# Compilation of OAK
+
+* Make sure OAK is compiled by issuing `make` in the directory `~/OAK`:
+
+```bash
+cd ~/OAK
+make
+cd ~/shallow-water-model
+```
+
 ---
 
 # Step 2: stochastic model run
@@ -398,6 +410,7 @@ end
 --
 
 ```matlab
+zetafe = ncread('free_ensemble.nc','zeta');
 prop_3 = mean(max(zetafe,[],3) > 3,4);
 mask = ncread('free_ensemble.nc','mask');
 prop_3(isnan(mask)) = NaN;
